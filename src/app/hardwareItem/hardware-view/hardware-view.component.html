@@ -1,24 +1,25 @@
-<h1 class="text-center mb-5 bg-black p-4 text-white fw-bolder">View All Customer</h1>
+<h1 class="text-center mb-5 bg-black p-4 text-white fw-bolder">View All Item</h1>
 
 <table class="table border">
     <tr class="border text-center bg-black text-white">
         <th>Count</th>
         <th >ID</th>
         <th >Name</th>
-        <th >City</th>
-        <th >Contact Number</th>
-        <th></th>
+        <th >Rental Per Date</th>
+        <th >Fine Per Day</th>
+        <th>Avalability</th>
         <th></th>
       </tr>
-        <tr class="border text-center" *ngFor="let customer of customerList; index as i">
+        <tr class="border text-center" *ngFor="let Item of itemList; index as i">
             <td>{{i+1}}</td>
-            <td>{{"EMP#000"+customer.id}}</td>
-            <td>{{customer.name}}</td>
-            <td>{{customer.city}}</td>
-            <td>{{customer.contact}}</td>
-            <td><button class="btn btn-danger" (click)="deleteCustomer(customer)"><i class="bi bi-trash3-fill"></i></button>
+            <td>{{"EMP#000"+item.itemId}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.rentalPerDay}}</td>
+            <td>{{item.finerPerDay}}</td>
+            <td>{{item.availability}}</td>
+            <td><button class="btn btn-danger" (click)="deleteItem(item)"><i class="bi bi-trash3-fill"></i></button>
             </td>
-            <td><button class="btn btn-primary" (click)="updateCustomer(customer)" data-bs-toggle="modal"
+            <td><button class="btn btn-primary" (click)="updateItem(item)" data-bs-toggle="modal"
                 data-bs-target="#exampleModal"><i class="bi bi-pencil-square"></i></button></td>
           </tr>
   </table>
@@ -27,33 +28,37 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Updated Customer</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Updated Hardware Item</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
   
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">ID:</label>
-            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedCustomer.customerId" disabled>
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedItem.itemId" disabled>
           </div>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Name:</label>
-            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedCustomer.name">
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedItem.name">
           </div>
           
           <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">City:</label>
-            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedCustomer.city">
+            <label for="recipient-name" class="col-form-label">Rental Per Day:</label>
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedItem.rentalPerDay">
           </div>
           <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Contact:</label>
-            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedCustomer.contact">
+            <label for="recipient-name" class="col-form-label">Fine Per Day:</label>
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedItem.finerPerDay">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Availability:</label>
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedItem.availability">
           </div>
           
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" (click)="saveUpdateCustomer()">Update</button>
+            <button type="button" class="btn btn-primary" (click)="saveUpdateItem()">Update</button>
           </div>
       </div>
     </div>
