@@ -1,7 +1,7 @@
 <div class="row g-3">
     <div class="col-sm-6">
       <label for="Name" class="form-label">Name</label>
-      <input type="text" class="form-control" id="Name" placeholder="" value="" required>
+      <input type="text" class="form-control" id="Name" placeholder="" [(ngModel)]="customerObj.name" value="" required>
       <div class="invalid-feedback">
         Valid first name is required.
       </div>
@@ -9,7 +9,7 @@
 
     <div class="col-md-5">
         <label for="city" class="form-label">City</label>
-        <select class="form-select" id="city"  required>
+        <select class="form-select" id="city" [(ngModel)]="customerObj.city"  required>
             <option value="">Choose...</option>
             <option value="Puttlam">Puttlam</option>
             <option value="Colombo">Colombo</option>
@@ -26,8 +26,10 @@
 
     <div class="col-12 mb-3">
         <label for="phoneNumber" class="form-label">Contact Number</label>
-        <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone Number">
+        <input type="tel" class="form-control" id="phoneNumber" [(ngModel)]="customerObj.contact" placeholder="Phone Number">
     </div>
+
+    <button type="button" class="btn btn-success" (click)="addCustomer()">Add Customer</button>
 
    
 

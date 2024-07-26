@@ -1,1 +1,25 @@
-<p>view works!</p>
+<h1 class="text-center mb-5 bg-black p-4 text-white fw-bolder">View All Customer</h1>
+
+<table class="table border">
+    <tr class="border text-center bg-black text-white">
+        <th>Count</th>
+        <th >ID</th>
+        <th >Name</th>
+        <th >City</th>
+        <th >Contact Number</th>
+        <th></th>
+        <th></th>
+      </tr>
+        <tr class="border text-center" *ngFor="let customer of customerList; index as i">
+            <td>{{i+1}}</td>
+            <td>{{"EMP#000"+customer.id}}</td>
+            <td>{{customer.name}}</td>
+            <td>{{customer.city}}</td>
+            <td>{{customer.contact}}</td>
+            <td><button class="btn btn-danger" (click)="deleteCustomer(customer)"><i class="bi bi-trash3-fill"></i></button>
+            </td>
+            <td><button class="btn btn-primary" (click)="updateCustomer(customer)" data-bs-toggle="modal"
+                data-bs-target="#exampleModal"><i class="bi bi-pencil-square"></i></button></td>
+          </tr>
+    
+  </table>
