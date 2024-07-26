@@ -1,16 +1,11 @@
 import { Routes } from '@angular/router';
-import { CustomerNavbarComponent } from './customer/customer-navbar/customer-navbar.component';
 import { RegisterComponent } from './customer/register/register.component';
 import { ViewComponent } from './customer/view/view.component';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { HardwareRegisterComponent } from './hardwareItem/hardware-register/hardware-register.component';
+import { HardwareViewComponent } from './hardwareItem/hardware-view/hardware-view.component';
 
 export const routes: Routes = [
-    {
-        path:"navbar",
-        component:NavbarComponent
-        
-      },
       {
         path:"register",
         component:RegisterComponent
@@ -22,6 +17,10 @@ export const routes: Routes = [
       {
         path:"hardwareRegister",
         component:HardwareRegisterComponent
+      },
+      {
+        path:"hardwareView",
+        component:HardwareViewComponent
       }
 ];
 

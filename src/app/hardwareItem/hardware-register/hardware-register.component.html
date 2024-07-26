@@ -1,1 +1,41 @@
+<div class="container">
+    
+    <div class="row g-3">
+        <div class="col-sm-6">
+          <label for="Name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="Name" [(ngModel)]="itemObj.name" placeholder="name"  value="" required>
+          <div class="invalid-feedback">
+            Valid first name is required.
+          </div>
+        </div>
 
+        <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="rentalperdate" class="form-label">Rental Per Day</label>
+              <input type="date" class="form-control" id="rentalperdate" [(ngModel)]="itemObj.rentalPerDay" placeholder="rental per day"  value="" required>
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="fineperdate" class="form-label">Fine Per Day</label>
+                  <input type="date" class="form-control" id="fineperdate" [(ngModel)]="itemObj.finerPerDay" placeholder="fine per day"  value="" required>
+                  <div class="invalid-feedback">
+                    Valid first name is required.
+                  </div>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-sm-6">
+                      <label for="availability" class="form-label">Availability</label>
+                      <input type="text" class="form-control" id="availability" [(ngModel)]="itemObj.availability" placeholder="availability"  value="" required>
+                      <div class="invalid-feedback">
+                        Valid first name is required.
+                      </div>
+                    </div>
+
+
+                    <button type="button" class="btn btn-success" (click)="addItem()">Add Hardware Item</button>
+</div>
