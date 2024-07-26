@@ -25,7 +25,7 @@ export class RegisterComponent {
     this.http.post("http://localhost:8080/customer",this.customerObj).subscribe(
       (data) =>{
         Swal.fire({
-          title: "Employee added!",
+          title: "Customer added!",
           text: "You clicked the button!",
           icon: "success"
         });
