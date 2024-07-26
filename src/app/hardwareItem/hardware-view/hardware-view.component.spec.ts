@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewComponent } from './view.component';
+import { HardwareViewComponent } from './hardware-view.component';
 
-describe('ViewComponent', () => {
-  let component: ViewComponent;
-  let fixture: ComponentFixture<ViewComponent>;
+describe('HardwareViewComponent', () => {
+  let component: HardwareViewComponent;
+  let fixture: ComponentFixture<HardwareViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ViewComponent]
+      imports: [HardwareViewComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ViewComponent);
+    fixture = TestBed.createComponent(HardwareViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
